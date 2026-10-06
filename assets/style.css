@@ -52,8 +52,11 @@ h2 { margin-top: 2.5rem; }
 .lead { font-size: 1.2rem; color: var(--muted); margin-top: 0; }
 .eyebrow { color: var(--accent); text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.8rem; font-weight: 700; margin: 0 0 0.5rem; }
 
-.hero { padding: 1rem 0 2rem; }
-.hero-mark { width: 88px; margin-bottom: 1.25rem; }
+.hero { display: flex; flex-wrap: wrap; align-items: center; gap: 1.25rem 2rem; padding: 0.5rem 0 0; }
+.hero > div { flex: 1 1 300px; }
+.hero h1 { margin-bottom: 0.5rem; }
+.hero .lead { margin-bottom: 0; }
+.hero-mark { width: 96px; height: 96px; }
 
 .panel {
   background: var(--surface);
@@ -61,7 +64,7 @@ h2 { margin-top: 2.5rem; }
   border-radius: 14px;
   padding: 1.5rem;
 }
-.app-panel { display: flex; flex-wrap: wrap; align-items: center; gap: 1.25rem; margin-top: 2.5rem; }
+.app-panel { display: flex; flex-wrap: wrap; align-items: center; gap: 1.25rem; margin-top: 2rem; }
 .app-panel > div { flex: 1 1 280px; }
 .app-panel img { width: 84px; height: 84px; border-radius: 22.5%; }
 .app-panel h2 { margin: 0 0 0.25rem; }
