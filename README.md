@@ -2,29 +2,30 @@
 
 Fluid by design. Charged by nature.
 
-Static website for Liquid Impulse Labs and the PPL Training app, served by
+Static website for Liquid Impulse Labs and its iPhone app RepCharge, served by
 GitHub Pages at [liquidimpulselabs.com](https://liquidimpulselabs.com).
 Plain HTML and CSS only: no frameworks, no build step, no tracking scripts.
 
-| File                | Purpose                                         |
-|---------------------|-------------------------------------------------|
-| `index.html`        | Company home page                               |
-| `ppl-training.html` | PPL Training features                           |
-| `support.html`      | Support page and contact email                  |
-| `privacy.html`      | Privacy Policy                                  |
-| `terms.html`        | Terms of Use                                    |
-| `assets/style.css`  | Shared styles. Colours are set at the top       |
-| `assets/*.png`      | Logo mark, app icon and favicons                |
-| `CNAME`             | Custom domain for GitHub Pages                  |
+| File                | Purpose                                            |
+|---------------------|----------------------------------------------------|
+| `index.html`        | Company home page, with a RepCharge section        |
+| `repcharge.html`    | RepCharge app page                                 |
+| `support.html`      | RepCharge support and contact emails               |
+| `privacy.html`      | RepCharge privacy policy                           |
+| `terms.html`        | RepCharge terms of use                             |
+| `assets/style.css`  | Shared styles. Both accent colours are set at the top |
+| `assets/*`          | Company logo and icons, RepCharge logos and icons  |
+| `CNAME`             | Custom domain for GitHub Pages                     |
+
+Colours: Liquid Impulse Labs uses its yellow (`--accent`) everywhere. The
+RepCharge red orange (`--repcharge-accent`) applies only inside elements with
+the `repcharge` class, so the header and footer keep the company style.
 
 The header and footer are repeated in each HTML file, so if you change a link
 there, change it on every page.
 
 ## Publishing
 
-1. Repository → **Settings** → **Pages** → *Deploy from a branch*, choose the
-   branch and `/ (root)`, then **Save**.
-2. The `CNAME` file sets the custom domain to `liquidimpulselabs.com`. At your
-   domain registrar, point the domain at GitHub Pages (see GitHub's
-   "Managing a custom domain for your GitHub Pages site" guide), then tick
-   **Enforce HTTPS** in the Pages settings once it becomes available.
+Repository, then Settings, then Pages: deploy from a branch, choose the branch
+and `/ (root)`. The `CNAME` file sets the custom domain to
+`liquidimpulselabs.com`.

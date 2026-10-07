@@ -7,7 +7,13 @@
   --muted: #a3a3a8;
   --accent: #ffc936;
   --accent-deep: #b8860b;
+  --repcharge-accent: #FE3D23;
 }
+
+/* RepCharge content only. Inside this scope the accent becomes the RepCharge
+   red orange. The header and footer sit outside it and keep the yellow. */
+.repcharge { --accent: var(--repcharge-accent); }
+.repcharge h2 { color: var(--accent); }
 
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
@@ -64,11 +70,12 @@ h2 { margin-top: 2.5rem; }
   border-radius: 14px;
   padding: 1.5rem;
 }
-.app-panel { display: flex; flex-wrap: wrap; align-items: center; gap: 1.25rem; margin-top: 2rem; }
-.app-panel > div { flex: 1 1 280px; }
-.app-panel img { width: 84px; height: 84px; border-radius: 22.5%; }
-.app-panel h2 { margin: 0 0 0.25rem; }
-.app-panel p { margin: 0; color: var(--muted); }
+.rc-panel { display: flex; flex-wrap: wrap; align-items: center; gap: 1.25rem 2rem; margin-top: 2rem; border-top: 3px solid var(--accent); }
+.rc-panel .rc-logo { width: 220px; height: auto; }
+.rc-panel .rc-body { flex: 1 1 280px; }
+.rc-panel .rc-body p { margin: 0 0 0.9rem; color: var(--muted); }
+.rc-links { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem 1.25rem; }
+.rc-panel .rc-body .rc-links { margin: 0; }
 .badge {
   display: inline-block;
   border: 1px solid var(--accent);
@@ -89,6 +96,8 @@ h2 { margin-top: 2.5rem; }
   border-radius: 10px;
 }
 
+.button.secondary { background: transparent; color: var(--accent); border: 1px solid var(--accent); padding: 0.6rem 1.2rem; }
+
 .grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); margin-top: 1.5rem; }
 .grid .panel h3 { margin: 0 0 0.4rem; color: var(--accent); font-size: 1.05rem; }
 .grid .panel p { margin: 0; color: var(--muted); }
@@ -97,6 +106,8 @@ h2 { margin-top: 2.5rem; }
 .legal h2 { font-size: 1.2rem; margin-top: 2rem; }
 .legal .meta { color: var(--muted); }
 .legal li { margin-bottom: 0.4rem; }
+.legal pre { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1rem 1.25rem; overflow-x: auto; font-size: 0.95rem; line-height: 1.55; }
+.legal pre code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
 address { font-style: normal; }
 
 details { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 0.9rem 1.1rem; margin-bottom: 0.75rem; }
@@ -111,31 +122,13 @@ details p { color: var(--muted); margin-bottom: 0; }
 .footer-links a:hover { color: var(--accent); }
 .site-footer p { margin: 0; }
 
-/* PPL Training page */
-.app-hero { display: flex; flex-wrap: wrap; align-items: center; gap: 1.5rem 2rem; }
+/* RepCharge app page */
+.app-hero { display: flex; flex-wrap: wrap; align-items: center; gap: 1.5rem 3rem; }
 .app-hero > div { flex: 1 1 320px; }
-.app-hero .app-icon { width: 112px; height: 112px; border-radius: 22.5%; }
-.tagline { color: var(--accent); font-weight: 600; font-size: 1.15rem; margin: 0 0 0.75rem; }
+.app-hero h1 { font-size: clamp(1.75rem, 4.5vw, 2.5rem); }
+.rc-logo-hero { width: min(100%, 320px); height: auto; }
 
-.steps { list-style: none; padding: 0; counter-reset: step; display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-top: 1.5rem; }
-.steps li { counter-increment: step; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 1.25rem 1.5rem; }
-.steps li::before {
-  content: counter(step);
-  display: inline-grid; place-items: center;
-  width: 2rem; height: 2rem; border-radius: 50%;
-  background: var(--accent); color: #111; font-weight: 800;
-  margin-bottom: 0.6rem;
-}
-.steps strong { display: block; font-size: 1.05rem; }
-.steps span { color: var(--muted); }
-
-.group-title { margin-top: 2.25rem; margin-bottom: 0; font-size: 1.1rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; }
 .grid .panel h3 + p { margin-top: 0; }
-
-.timeline { list-style: none; padding: 0; margin: 1.5rem 0 1rem; display: grid; gap: 0.75rem; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
-.timeline li { border-top: 3px solid var(--accent); background: var(--surface); border-radius: 0 0 12px 12px; padding: 1rem 1.25rem; }
-.timeline small { color: var(--accent); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
-.timeline strong { display: block; font-size: 1.1rem; }
 
 .privacy-strip {
   margin-top: 3rem;
@@ -147,4 +140,7 @@ details p { color: var(--muted); margin-bottom: 0; }
 .privacy-strip strong { color: var(--accent); }
 .privacy-strip span::before { content: "✓ "; color: var(--accent); }
 
-.app-details { margin-top: 3rem; color: var(--muted); font-size: 0.95rem; display: flex; flex-wrap: wrap; gap: 0.25rem 1.5rem; }
+.link-row { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 2rem 0 0; }
+.app-details { margin-top: 2.5rem; color: var(--muted); font-size: 0.95rem; display: flex; flex-wrap: wrap; gap: 0.25rem 1.5rem; }
+
+.visually-hidden { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
