@@ -167,3 +167,30 @@ h2 + .group-title { margin-top: 1.25rem; }
   h2 { margin-top: 2.5rem; }
 }
 h2 + details { margin-top: 1.25rem; }
+
+/* Expanding sections on the privacy and terms pages (native details/summary, no script) */
+.legal details.section { background: none; border: 0; border-bottom: 1px solid var(--border); border-radius: 0; padding: 0; margin: 0; }
+.legal :not(details.section) + details.section { border-top: 1px solid var(--border); margin-top: 2rem; }
+.legal details.section > summary {
+  list-style: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: space-between; gap: 1.25rem;
+  padding: 1.35rem 0;
+}
+.legal details.section > summary::-webkit-details-marker { display: none; }
+.legal details.section > summary h2 { margin: 0; font-size: 1.15rem; }
+.legal details.section > summary::after {
+  content: ""; flex: 0 0 16px; height: 16px;
+  background:
+    linear-gradient(var(--accent), var(--accent)) center / 100% 2px no-repeat,
+    linear-gradient(var(--accent), var(--accent)) center / 2px 100% no-repeat;
+  transition: background-size 0.2s ease;
+}
+.legal details.section[open] > summary::after {
+  background:
+    linear-gradient(var(--accent), var(--accent)) center / 100% 2px no-repeat,
+    linear-gradient(var(--accent), var(--accent)) center / 2px 0 no-repeat;
+}
+.legal details.section > summary:hover h2 { text-decoration: underline; text-underline-offset: 4px; }
+.legal details.section > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.legal details.section p { color: var(--text); margin: 0 0 1em; }
+.legal details.section > :last-child { margin-bottom: 1.5rem; }
