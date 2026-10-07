@@ -207,3 +207,14 @@ main.repcharge .app-hero {
   border-bottom: 3px solid transparent;
   border-image: linear-gradient(90deg, var(--repcharge-accent), var(--repcharge-bolt)) 1;
 }
+
+/* Home page RepCharge box: the same two tone touch. A red to yellow strip
+   along the top (drawn as a background so the rounded corners stay) and a
+   yellow "Coming soon" badge; the button stays red orange. */
+.rc-panel {
+  border-top: 1px solid var(--border);
+  background:
+    linear-gradient(90deg, var(--repcharge-accent), var(--repcharge-bolt)) top / 100% 3px no-repeat,
+    var(--surface);
+}
+.rc-panel .badge { color: var(--repcharge-bolt); border-color: var(--repcharge-bolt); }
