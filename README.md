@@ -19,7 +19,9 @@ Plain HTML and CSS only: no frameworks, no build step, no tracking scripts.
 
 Colours: Liquid Impulse Labs uses its yellow (`--accent`) everywhere. The
 RepCharge red orange (`--repcharge-accent`) applies only inside elements with
-the `repcharge` class, so the header and footer keep the company style.
+the `repcharge` class (the RepCharge page and the RepCharge box on the home
+page), so the header, footer, support, privacy and terms pages keep the
+company style.
 
 The header and footer are repeated in each HTML file, so if you change a link
 there, change it on every page.

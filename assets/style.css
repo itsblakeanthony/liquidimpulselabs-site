@@ -101,7 +101,7 @@ h2 { margin: 3rem 0 0; }
 .grid .panel p { margin: 0; color: var(--muted); }
 
 /* Legal pages */
-.legal h2 { font-size: 1.2rem; margin: 2.25rem 0 0.5rem; }
+.legal h2 { font-size: 1.2rem; margin: 2.25rem 0 0.5rem; color: var(--accent); }
 .legal h1 + .meta { margin-top: 0; }
 .legal ul { padding-left: 1.25rem; }
 .legal .meta { color: var(--muted); }
@@ -177,7 +177,7 @@ h2 + details { margin-top: 1.25rem; }
   padding: 1.35rem 0;
 }
 .legal details.section > summary::-webkit-details-marker { display: none; }
-.legal details.section > summary h2 { margin: 0; font-size: 1.15rem; }
+.legal details.section > summary h2 { margin: 0; font-size: 1.15rem; color: var(--accent); }
 .legal details.section > summary::after {
   content: ""; flex: 0 0 16px; height: 16px;
   background:
@@ -190,7 +190,6 @@ h2 + details { margin-top: 1.25rem; }
     linear-gradient(var(--accent), var(--accent)) center / 100% 2px no-repeat,
     linear-gradient(var(--accent), var(--accent)) center / 2px 0 no-repeat;
 }
-.legal details.section > summary:hover h2 { text-decoration: underline; text-underline-offset: 4px; }
 .legal details.section > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 .legal details.section p { color: var(--text); margin: 0 0 1em; }
 .legal details.section > :last-child { margin-bottom: 1.5rem; }
