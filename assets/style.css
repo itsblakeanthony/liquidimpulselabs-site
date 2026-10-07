@@ -8,6 +8,7 @@
   --accent: #ffc936;
   --accent-deep: #b8860b;
   --repcharge-accent: #FE3D23;
+  --repcharge-bolt: #FFC933;  /* the bolt yellow, sampled from the two tone RepCharge logo */
 }
 
 /* RepCharge content only. Inside this scope the accent becomes the RepCharge
@@ -193,3 +194,16 @@ h2 + details { margin-top: 1.25rem; }
 .legal details.section > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 .legal details.section p { color: var(--text); margin: 0 0 1em; }
 .legal details.section > :last-child { margin-bottom: 1.5rem; }
+
+/* RepCharge page: two tone, like the logo. Red orange leads (headings, cards, buttons,
+   links); the bolt yellow adds the spark (labels, step numbers, ticks, markers). */
+main.repcharge .eyebrow,
+main.repcharge .group-title { color: var(--repcharge-bolt); }
+main.repcharge .steps li::before { background: var(--repcharge-bolt); }
+main.repcharge .privacy-strip span::before { color: var(--repcharge-bolt); }
+main.repcharge summary::marker { color: var(--repcharge-bolt); }
+main.repcharge .app-hero {
+  padding-bottom: 2.5rem;
+  border-bottom: 3px solid transparent;
+  border-image: linear-gradient(90deg, var(--repcharge-accent), var(--repcharge-bolt)) 1;
+}
