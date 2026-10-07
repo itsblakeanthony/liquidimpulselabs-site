@@ -48,6 +48,8 @@ img { max-width: 100%; height: auto; }
 .site-nav { display: flex; flex-wrap: wrap; gap: 0.25rem 1rem; }
 .site-nav a { color: var(--muted); text-decoration: none; font-size: 0.95rem; }
 .site-nav a:hover, .site-nav a[aria-current="page"] { color: var(--accent); }
+/* The one exception in the header: the RepCharge link turns red orange when hovered or selected */
+.site-nav a.nav-rc:hover, .site-nav a.nav-rc[aria-current="page"] { color: var(--repcharge-accent); }
 
 /* Layout */
 main { max-width: 1040px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
@@ -128,6 +130,21 @@ details p { color: var(--muted); margin-bottom: 0; }
 
 .grid .panel h3 + p { margin-top: 0; }
 
+.steps { list-style: none; padding: 0; counter-reset: step; display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); margin: 1.25rem 0 0; }
+.steps li { counter-increment: step; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 1.5rem 1.75rem; }
+.steps li::before {
+  content: counter(step);
+  display: inline-grid; place-items: center;
+  width: 2rem; height: 2rem; border-radius: 50%;
+  background: var(--accent); color: #111; font-weight: 800;
+  margin-bottom: 0.75rem;
+}
+.steps strong { display: block; font-size: 1.05rem; margin-bottom: 0.25rem; }
+.steps span { color: var(--muted); }
+
+.group-title { margin: 2rem 0 0; font-size: 0.95rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; }
+h2 + .group-title { margin-top: 1.25rem; }
+
 .privacy-strip {
   margin-top: 2.5rem;
   border: 1px solid var(--accent);
@@ -149,3 +166,4 @@ details p { color: var(--muted); margin-bottom: 0; }
   .rc-panel { padding: 1.5rem; }
   h2 { margin-top: 2.5rem; }
 }
+h2 + details { margin-top: 1.25rem; }
