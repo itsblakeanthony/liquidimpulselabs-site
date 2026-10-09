@@ -236,6 +236,8 @@ main.holdtheflow .app-hero {
   border-image: linear-gradient(90deg, var(--flow-blue), var(--lil-yellow)) 1;
 }
 .htf-mark { width: 150px; height: auto; }
+/* The game icon is a full square image; round it like an iOS icon. */
+.htf-mark, .htf-hero-mark { border-radius: 22%; }
 .htf-hero-mark { width: min(100%, 220px); height: auto; margin: 0 auto; display: block; }
 .app-hero .htf-hero { flex: 0 1 260px; text-align: center; }
 .htf-wordmark { font-size: clamp(1.6rem, 4vw, 2.1rem); font-weight: 800; letter-spacing: 0.01em; margin: 0.75rem 0 0; color: var(--text); }
