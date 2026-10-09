@@ -5,16 +5,21 @@
   --border: #2a2a2f;
   --text: #f2f2f0;
   --muted: #a3a3a8;
-  --accent: #ffc936;
+  --lil-yellow: #ffc936;  /* Liquid Impulse Labs yellow */
+  --accent: var(--lil-yellow);
   --accent-deep: #b8860b;
   --repcharge-accent: #FE3D23;
   --repcharge-bolt: #FFC933;  /* the bolt yellow, sampled from the two tone RepCharge logo */
+  --flow-blue: #3DA5FF;  /* Hold the Flow: water and electricity blue, paired with the company yellow */
 }
 
 /* RepCharge content only. Inside this scope the accent becomes the RepCharge
    red orange. The header and footer sit outside it and keep the yellow. */
 .repcharge { --accent: var(--repcharge-accent); }
 .repcharge h2 { color: var(--accent); }
+/* Hold the Flow content only: blue leads, the company yellow is the spark. */
+.holdtheflow { --accent: var(--flow-blue); }
+.holdtheflow h2 { color: var(--accent); }
 
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
@@ -51,6 +56,7 @@ img { max-width: 100%; height: auto; }
 .site-nav a:hover, .site-nav a[aria-current="page"] { color: var(--accent); }
 /* The one exception in the header: the RepCharge link turns red orange when hovered or selected */
 .site-nav a.nav-rc:hover, .site-nav a.nav-rc[aria-current="page"] { color: var(--repcharge-accent); }
+.site-nav a.nav-htf:hover, .site-nav a.nav-htf[aria-current="page"] { color: var(--flow-blue); }
 
 /* Layout */
 main { max-width: 1040px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
@@ -218,3 +224,38 @@ main.repcharge .app-hero {
     var(--surface);
 }
 .rc-panel .badge { color: var(--repcharge-bolt); border-color: var(--repcharge-bolt); }
+
+/* Hold the Flow page and home box: blue leads, the company yellow adds the spark */
+main.holdtheflow .eyebrow,
+main.holdtheflow .group-title { color: var(--lil-yellow); }
+main.holdtheflow .steps li::before { background: var(--lil-yellow); }
+main.holdtheflow .privacy-strip span::before { color: var(--lil-yellow); }
+main.holdtheflow .app-hero {
+  padding-bottom: 2.5rem;
+  border-bottom: 3px solid transparent;
+  border-image: linear-gradient(90deg, var(--flow-blue), var(--lil-yellow)) 1;
+}
+.htf-mark { width: 150px; height: auto; }
+.htf-hero-mark { width: min(100%, 220px); height: auto; margin: 0 auto; display: block; }
+.app-hero .htf-hero { flex: 0 1 260px; text-align: center; }
+.htf-wordmark { font-size: clamp(1.6rem, 4vw, 2.1rem); font-weight: 800; letter-spacing: 0.01em; margin: 0.75rem 0 0; color: var(--text); }
+.htf-wordmark span { color: var(--flow-blue); }
+.htf-panel {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 1.5rem 2.5rem;
+  margin-top: 1.5rem; padding: 2rem;
+  border-top: 1px solid var(--border);
+  background:
+    linear-gradient(90deg, var(--flow-blue), var(--lil-yellow)) top / 100% 3px no-repeat,
+    var(--surface);
+}
+.htf-panel .rc-body { flex: 1 1 280px; }
+.htf-panel .htf-mark { width: 120px; margin: 0 50px; }
+.htf-panel h2 { margin: 0.25rem 0 0.25rem; font-size: 1.5rem; }
+.htf-panel p { margin: 0 0 1.25rem; color: var(--muted); font-size: 1.1rem; }
+.htf-panel .badge { color: var(--lil-yellow); border-color: var(--lil-yellow); }
+@media (max-width: 600px) { .htf-panel { padding: 1.5rem; } .htf-panel .htf-mark { margin: 0; width: 96px; } }
+.htf-panel { border: 1px solid var(--border); border-radius: 14px; }
+.app-hero .htf-hero { flex: 0 0 260px; }
+.htf-wordmark { white-space: nowrap; }
+main.holdtheflow .grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); }
+main.holdtheflow summary::marker { color: var(--lil-yellow); }
