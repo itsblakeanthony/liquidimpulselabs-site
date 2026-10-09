@@ -18,11 +18,13 @@ Plain HTML and CSS only: no frameworks, no build step, no tracking scripts.
 | `assets/*`          | Company logo and icons, RepCharge logos and icons  |
 | `CNAME`             | Custom domain for GitHub Pages                     |
 
-Colours: Liquid Impulse Labs uses its yellow (`--accent`) everywhere. The
-RepCharge red orange (`--repcharge-accent`) applies only inside elements with
-the `repcharge` class (the RepCharge page and the RepCharge box on the home
-page), so the header, footer, support, privacy and terms pages keep the
-company style.
+Colours: anything Liquid Impulse Labs is yellow (`--lil-yellow`), including
+the header, footer, home page and the page itself on support, privacy and
+terms. RepCharge content is red orange (`--repcharge-accent`), inside elements
+with the `repcharge` class. Hold the Flow content is blue (`--flow-blue`),
+inside elements with the `holdtheflow` class. That covers the app pages, the
+app boxes on the home page, the app nav links, and each app's button and
+panel on support, privacy and terms.
 
 Support, privacy and terms: one page each, with an app selector. Each app's
 complete document is a panel, and a link opens it directly, for example

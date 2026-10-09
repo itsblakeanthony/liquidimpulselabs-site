@@ -260,16 +260,18 @@ main.holdtheflow .app-hero {
 main.holdtheflow .grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); }
 main.holdtheflow summary::marker { color: var(--lil-yellow); }
 
-/* Support, privacy and terms: one page each, with a panel per app.
+/* Support, privacy and terms: one page each, with a panel per app. The page
+   itself is company yellow; each app's button and panel carry that app's
+   class, so RepCharge is red orange and Hold the Flow is blue.
    The selector is plain links; :target shows the chosen app's panel, and the
    first app shows when no app is chosen. Browsers without :has() show every
    panel in turn, so nothing is ever hidden by mistake. */
 .app-picker { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1.25rem 0 0.5rem; }
 .app-picker a {
   padding: 0.5rem 1.1rem; border: 1px solid var(--border); border-radius: 999px;
-  color: var(--text); font-weight: 600; text-decoration: none;
+  color: var(--accent); font-weight: 600; text-decoration: none;
 }
-.app-picker a:hover { border-color: var(--accent); color: var(--accent); }
+.app-picker a:hover { border-color: var(--accent); }
 .app-picker a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 .app-doc { scroll-margin-top: 7rem; }
 .app-doc + .app-doc { margin-top: 3rem; padding-top: 2rem; border-top: 2px solid var(--accent); }
